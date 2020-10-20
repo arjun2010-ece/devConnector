@@ -105,7 +105,8 @@ const PostSchema = new Schema({
 });
 ```
 
-
+LIKES and UNLIKES functionality is add and remove in likes ARRAY,
+where likes array has different likes objects and each object is identified by each user object.
 
 
 
