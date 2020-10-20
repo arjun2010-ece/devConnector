@@ -44,5 +44,6 @@ e.g::
     profile.experience.splice(removeIndex, 1);
     await profile.save();
 ```
+Note:: Its also an example of deleting from an nested Array of Objects array.
 
 
