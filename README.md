@@ -51,6 +51,10 @@ Post model has one to Many relationships with the User Model because One user ca
 At the same time a post can be liked by many user so the schema will be like this::
 The field "likes will be an array of objects where each user will be pointed to liked users.Since many users can like a single posts.
 
+
+Here check the comments attribute also as its an array of Objects while each comment object has user, text, name,avatar.
+
+
 ```
 const PostSchema = new Schema({
   user: {
