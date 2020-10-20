@@ -46,4 +46,64 @@ e.g::
 ```
 Note:: Its also an example of deleting from an nested Array of Objects array.
 
+==========================================================
+Post model has one to Many relationships with the User Model because One user can create many Posts and a single post will always belongs to only one User.
+At the same time a post can be liked by many user so the schema will be like this::
+The field "likes will be an array of objects where each user will be pointed to liked users.Since many users can like a single posts.
+
+```
+const PostSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'users'
+  },
+  text: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String
+  },
+  likes: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+      }
+    }
+  ],
+  comments: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+      },
+      text: {
+        type: String,
+        required: true
+      },
+      name: {
+        type: String
+      },
+      avatar: {
+        type: String
+      },
+      date: {
+        type: Date,
+        default: Date.now
+      }
+    }
+  ],
+  date: {
+    type: Date,
+    default: Date.now
+  }
+});
+```
+
+
+
+
+
+
 
