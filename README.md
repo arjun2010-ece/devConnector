@@ -28,3 +28,18 @@ await profile.save();
 ===============================
 -> When you delete the profile then you need to delete the user also.
 
+
+==============================
+
+deleteing an experience in profile::
+==================================
+first find index of experience id and then splice it.
+
+e.g::
+
+
+
+
+
+
+
