@@ -33,13 +33,16 @@ await profile.save();
 
 deleteing an experience in profile::
 ==================================
-first find index of experience id and then splice it.
+first find index of experience id and then splice it with that index.
+For finding indexOf, we need an simple array that isof IDs.
 
 e.g::
-
-
-
-
-
+```
+ const profile = await Profile.findOne({ user: req.user.id });
+     // Get remove index
+    const removeIndex = profile.experience.map(item => item.id).indexOf(req.params.exp_id);
+    profile.experience.splice(removeIndex, 1);
+    await profile.save();
+```
 
 
